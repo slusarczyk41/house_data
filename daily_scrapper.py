@@ -135,7 +135,7 @@ results = pd.DataFrame(
 )
 
 results.to_csv('data/'+str(len(listdir('data/'))+1).zfill(5)+"_"+str(dt.now().date()))
-
+driver.close()
 
 
 
