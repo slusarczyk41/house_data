@@ -56,6 +56,8 @@ def get_page_content(soup, url):
 
 opt = Options()
 opt.add_argument('--headless')
+opt.add_argument("--no-sandbox")
+opt.add_argument("--disable-dev-shm-usage")
 driver = Chrome(options = opt)
 
 
@@ -134,7 +136,7 @@ results = pd.DataFrame(
                'okna', 'polozenie']
 )
 
-results.to_csv('data/'+str(len(listdir('data/'))+1).zfill(5)+"_"+str(dt.now().date()))
+results.to_csv('data/'+str(len(listdir('/root/Projects/house_data/data/'))+1).zfill(5)+"_"+str(dt.now().date()))
 driver.close()
 
 
